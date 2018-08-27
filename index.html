@@ -1,628 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>试玩赚钱</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-<!-- saved from url=(0109)http://wx.wxecshop.net/weixin/plat/app/Html/1163/523571/diy1163_7650?fromuser=null&amp;wxref=mp.weixin.qq.com -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="format-detection" content="telephone=no">
-<title>赚钱平台</title>
-<script type="text/javascript">
-	//获取url参数
-	function GetRequest() {
-	   var url = location.search; //获取url中"?"符后的字串
-	   var theRequest = new Object();
-	   if (url.indexOf("?") != -1) {
-		  var str = url.substr(1);
-		  strs = str.split("&");
-		  for(var i = 0; i < strs.length; i ++) {
-			 theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
-		  }
-	   }
-	   return theRequest;
-	}
+        li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            height: 61px;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+        }
 
-	var Request = new Object();
-	Request = GetRequest();
-	var fromuser=Request['fromuser'];
-	if(fromuser){
-	window.localStorage.setItem("fromuser", fromuser);
+        .wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+        }
 
-	}
+        .header {
+            text-align: center;
+            height: 40px;
+            background: #fff;
+        }
 
-	if(!fromuser || fromuser=='undefined'){
-	 fromuser=window.localStorage.getItem("fromuser");
-	}
-function goNextPage(url){
-	var go_url='';
-		if(url){
-			if(url.indexOf("http")!=-1){
-			
-			go_url=url;
-			}else if(url.indexOf("tel")!=-1){ go_url=url;location.href=go_url;return;
-			}else if((url.indexOf(".html")!=-1) || (url.indexOf(".php")!=-1)){
-			
-			go_url=url
-			
-			}else{
-			go_url=url+'.html';	
-			}
+        ul {
+            background: rgba(204, 204, 204, 0.1);
+        }
 
-			
-			if(go_url.indexOf("?")!=-1){
-			
-			setTimeout(function(){
-					location.href=go_url+'&fromuser='+fromuser+'&wxref=mp.weixin.qq.com';
-			
-				},250);
-			}else{
-			
-			setTimeout(function(){
-					location.href=go_url+'?fromuser='+fromuser+'&wxref=mp.weixin.qq.com';
-			
-				},250);
-			}
-			
-			
-		}else{
-			alert('找不到此页面！');
-		
-		}
+        li .icon {
+            width: 50px;
+            height: 50px;
+            margin: 6px 5px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
 
-	}
+        li .icon img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+        }
 
-	function goLink(url){
-		if(url){
-			//  url=url.toLowerCase();
-			if(url.indexOf("http")!=-1 && url.indexOf("weixinpl")!=-1){
-				//跳转到活动
-				url+='&fromuser='+fromuser+'&wxref=mp.weixin.qq.com';
-			}else if(url.indexOf("http")!=-1){
-				url=url;
-			}else if(url.indexOf("php")!= -1){
-						url+='&C_id='+'1163'+'&wxref=mp.weixin.qq.com&fromuser='+fromuser;
-			}else{
-			url+='.html?wxref=mp.weixin.qq.com&fromuser='+fromuser;
-			}
-			
-			//alert('===='+url);
-			location.href=url;
-			}
-	}
-	function goPage(url){
-		if(url){
-			location.href=url;
-		}
+        li .article {
+            flex: 1;
+        }
 
-	}
-	</script>
-<style type="text/css">
-body{
-background:#f6ebf2;
-}
-body,.header,.header *,.com *,.tj_box *,.btnbox *{margin:0;padding:0;}
-.header,.header ul,.com ul,.tj_box ul,.btnbox ul,.header,.header li,.com li,.tj_box li,.btnbox li{list-style:none;}
-body{font-size:14px;}
-body{font-family:"微软雅黑","宋体",Arial;background:#efefef;line-height:1.8;}
-.clearfix:after{content:" ";height:0;visibility:hidden;display:block;clear:both;}
-* html .clearfix{zoom:1;}
-*:first-child+html .clearfix{zoom:1;}
-.wrapper{_width:640px;max-width:640px;margin:0 auto;}
-.tj_title,.tj_box dl{border-bottom:1px solid #c5c5c5;box-shadow:0 1px 0 #FFF;-webkit-border-bottom:none;-webkit-box-shadow:none;-webkit-border-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAl4AAAACCAMAAAC+LCIRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxNTdCRjY1RDQ2QTVFMTExOTEzOEE0ODc3QUIxNzlFOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0RkJGMjk2NkZDODcxMUUxOTlENDk5RDgzNTk0QUJDQyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0RkJGMjk2NUZDODcxMUUxOTlENDk5RDgzNTk0QUJDQyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjJCQURBMDA0QjNGQkUxMTFBNUY4QTFFQkFGRTM3OUNEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE1N0JGNjVENDZBNUUxMTE5MTM4QTQ4NzdBQjE3OUU5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+GgBqZwAAAIpQTFRF////xcXF/v7+/f39/Pz8+/v7+vr69/f3+fn59fX19vb2+Pj49PT0xsbGx8fHyMjIycnJzc3Ny8vLysrK0tLSzs7O4eHhzMzM3Nzc2tra09PT1NTU3t7e1tbWz8/P39/f0dHR0NDQ1dXV2NjY3d3d2dnZ4ODg19fX29vb8/Pz4uLi5OTk4+Pj5eXlvVT1UwAAALlJREFUeNrc0okVgjAQAFFUUEAF5Bbl9MKD/tuT3U0wMXkW4G9hxhiGJ3iBB0rRFdTgCM4gB/1ojy6jE7iBEnTgAAoUowa0oAIJ2pEMhCRCAeMTj9tOZn9iK/I+fEEwibiQy5gdlzAVaUlDYobKFAemIyXBlLcTuRCqve9RzuAQ5yNTE5zmmjLjS8ad20gckStaSdYCW7KUWDLzy+LbXMv4U/PfFnqmlqWx1LAVa8VK5Soc1bTRW4ABAJ6hNNejrHxUAAAAAElFTkSuQmCC) 0 0 2 0/0 0 2px 0;}
-.tj_title{margin:10px 10px 5px 10px;color:#777777;padding-bottom:5px;text-indent:10px;font-size:15px;font-weight:bold;}
-.tj_box{margin:15px 10px;text-align:left;font-size:12px;overflow:hidden;}
-.tj_box img{border:none;width:50px;height:50px;border-radius:25px 25px;}
-.tj_box dl{margin:5px 0;padding-bottom:5px;overflow:hidden;}
-.tj_box dl dt{float:right;padding:0;height:50px;}
-.tj_box dl dd{float:right;width:100%;margin-right:-55px;}
-.tj_box dl div{padding-right:70px;}
-.tj_box dl p{color:#999999;padding-right:8px;line-height:1.5;}
-.tj_box dl h3{color:#5a5a5a;font-size:14px;}
-.tj_base{display:inline-block;width:55px;height:70px;line-height:15px;text-align:center;color:#808080;text-decoration:none;margin:5px 0;background-position:center 6px;background-repeat:no-repeat;background-size:45px auto;}
+        li .btn {
+            display: block;
+            width: 50px;
+            margin: 8px;
+            background: #46be8a;
+            color: #fff;
+            text-align: center;
+            height: 28px;
+            font-size: 14px;
+            line-height: 28px;
+            border-radius: 10px;
+            letter-spacing: 2px;
+            box-shadow: 0 0 2px #46be8a;
+        }
 
-.header{
-	width:100%;
-	height:54px;
-}
-.header_div{
-	text-align:center;
-	height:54px;
-	margin:0 auto;
-}
-.header_div img{
-	height:100%;
-	width: 100%;
-}
-.menu { width:100%; height:40px; border-top:1px solid #c5c5c5; position:fixed; bottom:0; z-index:100;}
-.menu a { text-decoration:none;display:block;float:left; width:33.3%;border-right:1px solid #c5c5c5;box-sizing:border-box;  height:40px; color:#4a4a4a; font:normal 14px/40px 'SimSun';background:#fafafa; margin:0px; padding:0px; text-align:center; }
-.menu a.a2 {font-weight:bold; color:#EB6100; text-indent:6px;}
-.menu a.a3 { border:none;}
+        li h2 {
+            font-size: 12px;
+            overflow: hidden;
+            margin-bottom: 2px;
+            font-weight: bold;
+            color: #5a5a5a;
+        }
 
-.menu a.cur{color:#d9004a;}
-</style>
+        li p {
+            color: #999;
+            font-size: 12px;
+            max-height: 32px;
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-
-<div class="wrapper" id="wrapper">
-	<div class="header">
-		<div class="header_div">
-					<img src="./img/1510908631.jpg">		</div>
-	</div>
-	<div class="tj_box">
-		<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台1【强烈推荐】</h3>
-								<p>★★★每单1-3元，每天15-18点大量任务，微信支付宝提现</p>
-								<span onclick="goNextPage(&#39;http://www.eimoney.com/diamonds/mobile/pelQWMaKKfnCIBdGUAuJ/1191269/link2&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/59f9881b92e6f.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台2【推荐平台】</h3>
-								<p>★★★试玩每单1-3元，任务集中在15-18点，提现秒到账</p>
-								<span onclick="goNextPage(&#39;http://wx.xy599.com/share.php?id=302482&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/59f9885049a17.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台3【热门平台】</h3>
-								<p>***任务量大，微信提现快</p>
-								<span onclick="goNextPage(&#39;http://pp.ppsuoping.com/?random=1122&amp;r=825008259&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5af8033449251.png">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台4【热门平台】</h3>
-								<p>★★★首装送2元，收徒额外奖励，ipad可用</p>
-								<span onclick="goNextPage(&#39;http://tg.topasm.com?u=2767503&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/59f99abed8cd6.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台5【新手平台】</h3>
-								<p>****任务简单，注册即送5元</p>
-								<span onclick="goNextPage(&#39;http://m.qianmaiap.com/?u=163572&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5af7fee2c2a60.JPG">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台6【热门平台】</h3>
-								<p>***任务量大，微信提现快</p>
-								<span onclick="goNextPage(&#39;http://webs.i90ba.com/share.html?id=10167829&amp;sf=ios&amp;sfrom=ios&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5af7fd42164cb.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台7【必做平台】</h3>
-								<p>***收徒稳定，任务集中</p>
-								<span onclick="goNextPage(&#39;http://m.apptry100.cn/?u=80552393&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5af800cebf189.png">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台8【新手必做】</h3>
-								<p>★★每单1-3元，每天15-18点大量任务</p>
-								<span onclick="goNextPage(&#39;http://qz.fanfanx.cn/download?fromuid=1179935&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/59f99ae83f2cb.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台9【新手必做】</h3>
-								<p>◇◇◇ 全新改版，任务多，提现快，下午4点大量任务</p>
-								<span onclick="goNextPage(&#39;http://h5.jizhukeji.com/share.html?u=82738&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/59f99b1a22c3d.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台10【新手平台】</h3>
-								<p>*** 收徒稳定，大额提现</p>
-								<span onclick="goNextPage(&#39;https://chanshike.cn/?uid=44288&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5af7ff0e41c28.png">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台11【热门平台】</h3>
-								<p>★最热门，8元即可提现，大量任务，ipad可用</p>
-								<span onclick="goNextPage(&#39;http://a.appshike.com/join/inviteLetter?code=L4mozd7zKWU9XP5cnFMOKUTtQsnB*NbY&amp;logoType=1&amp;from=singlemessage&amp;isappinstalled=1&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/59f99bbca2653.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台12【试玩推荐】</h3>
-								<p>*** 新平台，任务简单，易上手</p>
-								<span onclick="goNextPage(&#39;https://invitation.xiaohanclub.top:440/Friend/FenBefor?invid=916841&amp;channid=2&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5afa5490dca38.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台13【新手必做】</h3>
-								<p>◇◇ 下午4点大量任务等你来抢</p>
-								<span onclick="goNextPage(&#39;http://lm.mdashi.cn/u/1053592.html&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/59f99ebb204b0.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台14【新手平台】</h3>
-								<p>*** 新平台，注册即送5元</p>
-								<span onclick="goNextPage(&#39;http://v2.mayixiaoka.com/rec/258735&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5afc02ba8ea0a.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台15【新手平台】</h3>
-								<p>****任务简单，注册即送5元</p>
-								<span onclick="goNextPage(&#39;http://bird.xy860.com/bird.html?SXKk&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5b25d7b1eee78.png">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台16【热门平台】</h3>
-								<p>***收徒稳定，任务集中</p>
-								<span onclick="goNextPage(&#39;http://www.xhebao.com/qcode.php?u_id=11353765&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5af7fe4fb2fe9.png">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台17【新手平台】</h3>
-								<p>*** 新平台，任务简单，易上手</p>
-								<span onclick="goNextPage(&#39;http://www.miquapp.com/Share?u=czoxNjoiMzg4MzAsMTUyOTQ4MjgzNSI7&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5b2a0fac67474.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台16【新手平台】</h3>
-								<p>*** 收徒稳定，大额提现</p>
-								<span onclick="goNextPage(&#39;http://h5.jinrizhuanqian.cn/webpage/html/checkout.html?uid=lhsnob&amp;sta=0&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5af7fe2115989.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台18【热门平台】</h3>
-								<p>***收徒稳定，任务集中</p>
-								<span onclick="goNextPage(&#39;http://m.moneyds.com/user/inviteu/81034491.html&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5af7fdead8bff.png">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台19【新手任务】</h3>
-								<p>*** 新平台，任务简单，易上手</p>
-								<span onclick="goNextPage(&#39;http://map1qq.com/?webpage=qr&amp;u=69057psj1b&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5afb940ba7b1d.png">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">阅读平台1【强烈推荐】</h3>
-								<p>***不用下载应用，浏览新闻即有收益</p>
-								<span onclick="goNextPage(&#39;http://ttshare.saasv.com/webapp/invite/share-gate?master_id=702891&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5afa7e85b51a5.png">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">试玩平台8【新手必做】</h3>
-								<p>任务多，提现快</p>
-								<span onclick="goNextPage(&#39;https://xiaoxiao517.com/?u=54278240&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5a210e0447ec7.jpg">
-						</dt>
-					</dl>
-				</a>
-			<a style="text-decoration:none;">
-					<dl class="clearfix">
-						<dd>
-							<div style="position: relative;padding-right: 110px;">
-								<h3 class="font14">阅读平台2【新上平台】</h3>
-								<p>*** 新平台，新闻浏览</p>
-								<span onclick="goNextPage(&#39;http://mwfky2u0.myaigou.com/ntiznde3ntu2&#39;)" style="cursor:pointer;display: inline-block;width: 60px; height: 33px;line-height: 33px;background-color: #44b549;border-radius: 5px;text-align: center;color:#fff;position: absolute;top: 50%;right:55px;margin-top: -17px;">
-									进入
-								</span>
-							</div>
-						</dd>
-						<dt class="tj_base">
-							<img src="./img/5afa80953ad44.png">
-						</dt>
-					</dl>
-				</a>
-				</div>
+<div class=wrapper>
+    <div class="header">
+        <img height="40px" src="./img/header.jpg">
+    </div>
+    <div class=content>
+        <ul>
+        </ul>
+    </div>
 </div>
-
-
-	<!--自定义菜单-->
+<script type="text/javascript" src="./js/jquery.min.js"></script>
 <script type="text/javascript">
-function init(){
-//loaded();
-}
+    var arr = [
+        {
+            id: 2,
+            icon: './img/icon1/2.png',
+            title: '【PP红包】轻松试玩，痛快赚钱',
+            tip: '单价1元起，安装助手送2元，10元可提现。支持支付宝、微信',
+            href: 'http://pp.ppsuoping.com/?random=1122&r=823799906',
+        },
+        {
+            id: 12,
+            icon: './img/icon1/12.png',
+            title: '【钱咖】手机赚钱平台，全网最高单价',
+            tip: '用户每成功体验一个软件只需要3-5分钟左右，单价奖励1.5~3.5元不等。',
+            href: 'https://xiaoxiao517.com/?u=57481107',
+        },
+        {
+            id: 13,
+            icon: './img/icon1/13.png',
+            title: '【试客小兵】',
+            tip: '新试客小兵不同于应用试客，两个是相互独立的，新试客小兵单价2元起，高的可达5元以上，8元即可提现，秒到帐。',
+            href: 'https://shike.com/i/XWkyAjo',
+        },
+        {
+            id: 4,
+            icon: './img/icon1/4.png',
+            title: '【小鱼赚钱】一亿两千万累计提现',
+            tip: '小鱼助手送2元，单价1-2元，10元就能提现。',
+            href: 'http://wx.xy599.com/share.php?id=19120584&act_source=invite',
+        },
+        {
+            id: 10,
+            icon: './img/icon1/10.png',
+            title: '【IMONEY】爱盈利给你发红包了',
+            tip: '加入立刻送1元现金奖励。只要10元就能提现，试玩应用单价1元起，任务多多！',
+            href: 'https://www.eimoney.com/diamonds/mobile/share/link?promote_code=5729690',
+        },
+        {
+            id: 1,
+            icon: './img/icon1/1.png',
+            title: '【小猪赚钱】10元就可以微信提现',
+            tip: '安装送1元，下载每个应用给1-3元左右的现金奖励，10元就可以微信提现',
+            href: 'http://integral.xckoo.com/invite?uid=253839',
+        },
+        {
+            id: 3,
+            icon: './img/icon1/3.png',
+            title: '【天天钱庄】网上兼职赚钱平台！',
+            tip: '天天钱庄苹果iOS应用试玩平台新用户送1元，应用单价1元起，5元就能提现。',
+            href: 'https://api.ancloud.cn/s/invite?fromuid=2137770',
+        },
+        {
+            id: 5,
+            icon: './img/icon1/5.png',
+            title: '【今日赚】每天赚点零花钱',
+            tip: '安装今日赚立送3元现金红包，你来我就送。单价1元起，10元起提现。',
+            href: 'http://jrz.jinrizhuanqian.cn?uid=yyldoe&sta=0&source=appStore',
+        },
+        {
+            id: 6,
+            icon: './img/icon1/6.png',
+            title: '【钱大师】三分钟碎片化时间，轻松赚钱',
+            tip: '注册即送2元，完善个人资料送0.5元，共2.5元，10元就可提现。',
+            href: 'http://m.moneyds.com/user/inviteu/81176613.html',
+        },
+        {
+            id: 7,
+            icon: './img/icon1/7.png',
+            title: '【钱脉】玩一玩 应用就领现金奖励',
+            tip: '最新苹果iOS应用试玩平台，单价1-2元（大部分1.5元）， 新用户验证并激活成功就送1元，10元就可提现。',
+            href: 'http://m.qianmaiap.com/?u=507111',
+        },
+        {
+            id: 8,
+            icon: './img/icon1/8.png',
+            title: '【蝉试客】试玩有趣的APP，每月多赚500元',
+            tip: '蝉试客试玩有趣的APP，每月多赚500元，新用户注册送1元，10元提现，单价1元起。',
+            href: 'http://csk1.xiaochanzhuanqian.cn/?uid=336951',
+        },
+        {
+            id: 9,
+            icon: './img/icon1/9.png',
+            title: '【应用猎人】随时随地轻松赚钱的手机APP',
+            tip: '新人送1元，每个任务单价1元起，10元提现支付宝或微信。',
+            href: 'http://h5.jizhukeji.com/share.html?u=430124',
+        },
 
+        {
+            id: 11,
+            icon: './img/icon1/11.png',
+            title: '【鼠宝试玩】100%可以瓜分到现金',
+            tip: '任务单价1-2元，10元就能提现。',
+            href: 'http://www.mapzqq-com.com/test/jump/703777',
+        },
+
+
+        {
+            id: 14,
+            icon: './img/icon1/14.png',
+            title: '【熊猫试玩】',
+            tip: '新用户加入下载熊猫大咖立送2元，单价1元起，10元就可提现。',
+            href: 'http://m.jinrizuijia.net/invite/?inviter=rTJEEGCZ8aeI7Ony0KqpheY0fo8OxXL4Qs35iDnTUMGiqPmRNQJLOnWFrHn_SVKsesp20zxsyPU1&from=link',
+        },
+        {
+            id: 15,
+            icon: './img/icon1/15.png',
+            title: '【蚂蚁小咖】',
+            tip: '加入送3元，满10元提现，单价1元起。',
+            href: 'http://v2.mayixiaoka.com/rec/349791',
+        },
+        {
+            id: 16,
+            icon: './img/icon1/16.png',
+            title: '【掉钱眼儿】新人最高可领取10元红包',
+            tip: '掉钱眼儿，一个体验APP就能帮你赚钱的平台，致力于做你的最好的赚钱伙伴，让你试玩软件也能轻松月入千元。',
+            href: 'http://tg.topaso.vip?u=8076961&e=507',
+        },
+        {
+            id: 17,
+            icon: './img/icon1/17.png',
+            title: '【狐狸赚】新用户送1元，10元就能提现',
+            tip: '新用户送1元，10元就能提现，利用闲暇时间通过狐狸赚试玩体验苹果手机应用即可轻松获得现金奖励。',
+            href: 'http://www.bazikeji.com/invite/667135',
+        },
+        {
+            id: 18,
+            icon: './img/icon1/18.jpg',
+            title: '【赚美金】',
+            tip: '新手任务领最高10元微信红包，任务单价1-3元',
+            href: 'https://usdcat.cn/share/386394',
+        },
+        {
+            id: 19,
+            icon: './img/icon1/19.png',
+            title: '【懒猫】',
+            tip: '新手任务领最高10元微信红包，任务单价1-3元',
+            href: 'http://lm.mdashi.cn/u/2745240.html',
+        },
+        {
+            id: 20,
+            icon: './img/icon1/20.png',
+            title: '【天天赚钱】',
+            tip: '单任务1块，10元提现，任务多，不重复',
+            href: 'http://www.51jpgy.com/web/share/userid/1556927.html',
+        },
+        {
+            id: 21,
+            icon: './img/icon1/21.png',
+            title: '【赚客】',
+            tip: '老平台，值得推荐',
+            href: 'http://zk.xyou123.net/w/link/20800655',
+        },
+        {
+            id: 22,
+            icon: './img/icon1/22.png',
+            title: '【一号红包】',
+            tip: '加入送3元，满10元提现，单价1元起。',
+            href: 'http://scxmcy.com.cn/?u=532951077&balance=1&name=&from=singlemessage&t=1532964376',
+        },
+        {
+            id: 23,
+            icon: './img/icon1/23.png',
+            title: '【米趣】',
+            tip: '最新苹果iOS应用试玩平台，单价1-2元（大部分1.5元）， 新用户验证并激活成功就送1元，10元就可提现。',
+            href: 'http://www.miquapp.com/Share?u=czoxNjoiOTkzNTgsMTUzMjk2NDk1OSI7&from=singlemessage',
+        },
+    ];
+    var str = '';
+    for (i in arr) {
+        str += '<li><div class="icon"><img width="50px" src="' + arr[i]["icon"] + '"></div>\n' +
+                '                    <div class="article">\n' +
+                '                        <h2>' + arr[i]["title"] + '</h2>\n' +
+                '                        <p>\n' +
+                '                            ' + arr[i]["tip"] + '\n' +
+                '                        </p>\n' +
+                '                    </div>\n' +
+                '                    <a class="btn" href="javascript:;" ontouchstart=' + 'window.location.href="' + arr[i]["href"] + '"' + '>\n' +
+                '                        进入\n' +
+                '                    </a></li>'
+    }
+    $('.content ul').html(str);
+    //	    function getList(){
+    //		    $.ajax({
+    //			    url:'linklist.json?'+new Date().getTime(),
+    //			    success:function(e){
+    //				    var arr=JSON.parse(e);
+    //				    var str='';
+    //				    for(i in arr){
+    //					    str+='<li><div class="icon">图标</div>\n' +
+    //						    '                    <div class="article">\n' +
+    //						    '                        <h2>'+arr[i]["title"]+'</h2>\n' +
+    //						    '                        <p>\n' +
+    //						    '                            '+arr[i]["tip"]+'\n' +
+    //						    '                        </p>\n' +
+    //						    '                    </div>\n' +
+    //						    '                    <a class="btn" href="'+arr[i]["href"]+'">\n' +
+    //						    '                        进入\n' +
+    //						    '                    </a></li>'
+    //				    }
+    //				    $('.content ul').html(str);
+    //			    }
+    //		    });
+    //	    }
+    //	    getList();
 </script>
-<!-- ----分享设置start---- -->
-	<script src="./img/jweixin-1.0.0.js"></script>
-	<script>
-		var C_id = "1163";
-	var appId = "";
-	var timestamp = "";
-	var nonceStr = "";
-	var signature = "";	
-	$.ajax({
-		type:"get", 
-		url:"/weixin/plat/app/index.php/IndexV2/weixin_share",
-		data:{C_id:C_id,url:""},
-		async: false,
-		dataType:"jsonp",
-		jsonp: "callback",
-		jsonpCallback:"success_jsonpCallback",
-		success:function(data){
-			appId = data.appId;
-			timestamp = data.timestamp;
-			nonceStr = data.nonceStr;
-			signature = data.signature;	 
-			weixinshare();			
-			
-		}
-	});
-function weixinshare(){
-		wx.config({
-		debug: false,
-		appId: appId,
-		timestamp: timestamp,
-		nonceStr: nonceStr,
-		signature: signature,
-		jsApiList: [
-		  // 所有要调用的 API 都要加到这个列表中
-		  'onMenuShareTimeline',
-		  'onMenuShareAppMessage',
-		  'hideMenuItems'
-		]
-		});
-	   wx.ready(function () {
-		// 在这里调用 API
-			wx.hideMenuItems({
-				menuList: [
-					"menuItem:share:qq",//隐藏分享到QQ
-					'menuItem:copyUrl' // 复制链接
-				], // 要隐藏的菜单项，所有menu项见附录3
-			});
-
-			var title ='' ;
-			var desc = '';
-			var link = location.href;
-			var imgUrl = '';
-			
-			wx.onMenuShareTimeline({
-				title: title, // 分享标题
-				link: link, // 分享链接			
-				imgUrl:imgUrl, // 分享图标
-				success: function () { 
-					// 用户确认分享后执行的回调函数
-					//alert("111");
-				},
-				cancel: function () { 
-					// 用户取消分享后执行的回调函数
-					//alert("222");
-				}
-			});
-			
-			wx.onMenuShareAppMessage({
-				title: title, // 分享标题
-				desc: desc, // 分享描述
-				link: link, // 分享链接		
-				imgUrl:imgUrl,
-				//imgUrl: '', // 分享图标
-				type: '', // 分享类型,music、video或link，不填默认为link
-				dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-				success: function () { 
-					// 用户确认分享后执行的回调函数
-					
-				},
-				cancel: function () { 
-					// 用户取消分享后执行的回调函数
-					
-				}
-			});				
-			
-	  });	
-	}	  
-	</script>
-<script>
-
-    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-        WeixinJSBridge.call('showOptionMenu');
-    });
-</script>
-<!-- ----分享设置end---- -->
-<!--  start验证用户是否已经可用-->
-<!--  end验证用户是否已经可用-->
-
-</body></html>
+</body>
+</html>
