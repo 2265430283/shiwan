@@ -456,7 +456,7 @@
 //     $('.content ul').html(str);
         function getList(){
             $.ajax({
-                url:'https://www.apple2.top/getInfo',
+                url:'https://www.apple2.top/getInfo?'+new Date().getTime(),
                 success:function(e){
                    setList(e)
                 },
