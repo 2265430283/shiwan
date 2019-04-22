@@ -440,43 +440,48 @@
   ]
    
     
-    var str = '';
-    for (i in arr) {
-        str += '<li><div class="icon"><img width="50px" src="' + arr[i]["icon"] + '"></div>\n' +
-                '                    <div class="article">\n' +
-                '                        <h2>' + arr[i]["title"] + '</h2>\n' +
-                '                        <p>\n' +
-                '                            ' + arr[i]["tip"] + '\n' +
-                '                        </p>\n' +
-                '                    </div>\n' +
-                '                    <a class="btn" href="javascript:;" ontouchstart=' + 'window.location.href="' + arr[i]["href"] + '"' + '>\n' +
-                '                        进入\n' +
-                '                    </a></li>'
-    }
-    $('.content ul').html(str);
-    //	    function getList(){
-    //		    $.ajax({
-    //			    url:'linklist.json?'+new Date().getTime(),
-    //			    success:function(e){
-    //				    var arr=JSON.parse(e);
-    //				    var str='';
-    //				    for(i in arr){
-    //					    str+='<li><div class="icon">图标</div>\n' +
-    //						    '                    <div class="article">\n' +
-    //						    '                        <h2>'+arr[i]["title"]+'</h2>\n' +
-    //						    '                        <p>\n' +
-    //						    '                            '+arr[i]["tip"]+'\n' +
-    //						    '                        </p>\n' +
-    //						    '                    </div>\n' +
-    //						    '                    <a class="btn" href="'+arr[i]["href"]+'">\n' +
-    //						    '                        进入\n' +
-    //						    '                    </a></li>'
-    //				    }
-    //				    $('.content ul').html(str);
-    //			    }
-    //		    });
-    //	    }
-    //	    getList();
+//     var str = '';
+//     for (i in arr) {
+//         str += '<li><div class="icon"><img width="50px" src="' + arr[i]["icon"] + '"></div>\n' +
+//                 '                    <div class="article">\n' +
+//                 '                        <h2>' + arr[i]["title"] + '</h2>\n' +
+//                 '                        <p>\n' +
+//                 '                            ' + arr[i]["tip"] + '\n' +
+//                 '                        </p>\n' +
+//                 '                    </div>\n' +
+//                 '                    <a class="btn" href="javascript:;" ontouchstart=' + 'window.location.href="' + arr[i]["href"] + '"' + '>\n' +
+//                 '                        进入\n' +
+//                 '                    </a></li>'
+//     }
+//     $('.content ul').html(str);
+        function getList(){
+            $.ajax({
+                url:'https://www.apple2.top/getInfo',
+                success:function(e){
+                   setList(e)
+                },
+                error:function(){
+                   setList(arr)
+                }
+            });
+        }
+        getList();
+        function setList(arr){
+            var str = '';
+            for (i in arr) {
+                str += '<li><div class="icon"><img width="50px" src="' + arr[i]["icon"] + '"></div>\n' +
+                        '                    <div class="article">\n' +
+                        '                        <h2>' + arr[i]["title"] + '</h2>\n' +
+                        '                        <p>\n' +
+                        '                            ' + arr[i]["tip"] + '\n' +
+                        '                        </p>\n' +
+                        '                    </div>\n' +
+                        '                    <a class="btn" href="javascript:;" ontouchstart=' + 'window.location.href="' + arr[i]["href"] + '"' + '>\n' +
+                        '                        进入\n' +
+                        '                    </a></li>'
+            }
+            $('.content ul').html(str);
+        }
    
 </script>
 </body>
