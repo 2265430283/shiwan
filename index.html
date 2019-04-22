@@ -438,12 +438,7 @@
       "submission_date": null
     }
   ]
-    $.ajax({
-        url:'https://www.apple2.top/getInfo',
-        success:function(data){
-            console.log(data);
-        }
-    })
+   
     
     var str = '';
     for (i in arr) {
@@ -482,6 +477,12 @@
     //		    });
     //	    }
     //	    getList();
+     $.ajax({
+        url:'https://www.apple2.top/getInfo',
+        success:function(data){
+            console.log(data);
+        }
+    })
 </script>
 </body>
 </html>
