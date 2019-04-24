@@ -75,14 +75,12 @@
             font-weight: bold;
             color: #5a5a5a;
         }
-
         li p {
             color: #999;
             font-size: 12px;
             max-height: 32px;
             overflow: hidden;
         }
-
         a {
             text-decoration: none;
         }
@@ -456,7 +454,7 @@
 //     $('.content ul').html(str);
         function getList(){
             $.ajax({
-                url:'https://www.apple2.top/getInfo?'+new Date().getTime(),
+                url:'https://www.apple2.top/getInfo',
                 success:function(e){
                    setList(e)
                 },
