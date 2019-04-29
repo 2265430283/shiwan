@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>试玩赚钱</title>
     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <style type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
         * {
             margin: 0;
-            padding: 0;
+            padding: 0
         }
-
+        
         li {
             list-style: none;
             display: flex;
             align-items: center;
             height: 61px;
             overflow: hidden;
-            border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+            border-bottom: 1px solid rgba(204, 204, 204, 0.5)
         }
-
+        
         .wrapper {
             max-width: 680px;
-            margin: 0 auto;
+            margin: 0 auto
         }
-
+        
         .header {
             text-align: center;
             height: 40px;
-            background: #fff;
+            background: #fff
         }
-
+        
         ul {
-            background: rgba(204, 204, 204, 0.1);
+            background: rgba(204, 204, 204, 0.1)
         }
-
+        
         li .icon {
             width: 50px;
             height: 50px;
             margin: 6px 5px;
             border-radius: 8px;
             overflow: hidden;
+            background-image: url('img/bg.png')
         }
-
+        
         li .icon img {
             width: 50px;
             height: 50px;
-            border-radius: 8px;
+            border-radius: 8px
         }
-
+        
         li .article {
-            flex: 1;
+            flex: 1
         }
-
+        
         li .btn {
             display: block;
             width: 50px;
@@ -65,422 +66,275 @@
             line-height: 28px;
             border-radius: 10px;
             letter-spacing: 2px;
-            box-shadow: 0 0 2px #46be8a;
+            box-shadow: 0 0 2px #46be8a
         }
-
+        
         li h2 {
             font-size: 12px;
             overflow: hidden;
             margin-bottom: 2px;
             font-weight: bold;
-            color: #5a5a5a;
+            color: #5a5a5a
         }
+        
         li p {
             color: #999;
             font-size: 12px;
             max-height: 32px;
-            overflow: hidden;
+            overflow: hidden
         }
+        
         a {
-            text-decoration: none;
+            text-decoration: none
         }
     </style>
 </head>
+
 <body>
-<div class=wrapper>
-    <div class="header">
-        <img height="40px" src="./img/header.jpg">
+    <div class=wrapper>
+        <div class="header">
+            <img height="40px" src="./img/header.jpg">
+        </div>
+        <div class=content>
+            <ul>
+            </ul>
+        </div>
     </div>
-    <div class=content>
-        <ul>
-        </ul>
-    </div>
-</div>
-<script type="text/javascript" src="//libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-<script type="text/javascript">
-    var   arr=[
-    {
-      "0": "1",
-      "id": "1",
-      "1": "./img/icon1/12.png",
-      "icon": "./img/icon1/12.png",
-      "2": "【钱咖】《新手必做》★★★★★",
-      "title": "【钱咖】《新手必做》★★★★★",
-      "3": "用户每成功体验一个软件只需要3-5分钟左右，单价奖励1.5~3.5元不等。",
-      "tip": "用户每成功体验一个软件只需要3-5分钟左右，单价奖励1.5~3.5元不等。",
-      "4": "https://lovefive.cn/?u=46568308&referer_code=5568105ad8498&from=singlemessage",
-      "href": "https://lovefive.cn/?u=46568308&referer_code=5568105ad8498&from=singlemessage",
-      "5": "2018-09-10",
-      "submission_date": "2018-09-10"
-    },
-    {
-      "0": "2",
-      "id": "2",
-      "1": "./img/icon1/13.png",
-      "icon": "./img/icon1/13.png",
-      "2": "【试客小兵】《新手必做》★★★★★",
-      "title": "【试客小兵】《新手必做》★★★★★",
-      "3": "新试客小兵单价2元起，高的可达5元以上，8元即可提现，秒到帐。",
-      "tip": "新试客小兵单价2元起，高的可达5元以上，8元即可提现，秒到帐。",
-      "4": "https://shike.com/i/LVlvrgc",
-      "href": "https://shike.com/i/LVlvrgc",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "7",
-      "id": "7",
-      "1": "./img/icon1/3.png",
-      "icon": "./img/icon1/3.png",
-      "2": "【天天钱庄】《新手必做》★★★★★",
-      "title": "【天天钱庄】《新手必做》★★★★★",
-      "3": "天天钱庄苹果iOS应用试玩平台新用户送1元，应用单价1元起，5元就能提现。",
-      "tip": "天天钱庄苹果iOS应用试玩平台新用户送1元，应用单价1元起，5元就能提现。",
-      "4": "https://api.ancloud.cn/s/invite?fromuid=2259725",
-      "href": "https://api.ancloud.cn/s/invite?fromuid=2259725",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "28",
-      "id": "28",
-      "1": "./img/icon1/24.jpeg",
-      "icon": "./img/icon1/24.jpeg",
-      "2": "【PP红包】★★★★★",
-      "title": "【PP红包】《新手必做》★★★★★",
-      "3": "试玩应用单价1元起，任务多多",
-      "tip": "试玩应用单价1元起，任务多多",
-      "4": "http://pp.ppsuoping.com/?random=1122&r=822481059",
-      "href": "http://pp.ppsuoping.com/?random=1122&r=822481059",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "8",
-      "id": "8",
-      "1": "./img/icon1/10.png",
-      "icon": "./img/icon1/10.png",
-      "2": "【IMONEY】《新手必做》★★★★★",
-      "title": "【IMONEY】《新手必做》★★★★★",
-      "3": "加入立刻送5元现金奖励。只要10元就能提现，试玩应用单价1元起，任务多多",
-      "tip": "加入立刻送5元现金奖励。只要10元就能提现，试玩应用单价1元起，任务多多",
-      "4": "https://www.eimoney.com/diamonds/mobile/share/link?promote_code=8576067",
-      "href": "https://www.eimoney.com/diamonds/mobile/share/link?promote_code=8576067",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "9",
-      "id": "9",
-      "1": "./img/icon1/4.png",
-      "icon": "./img/icon1/4.png",
-      "2": "【小鱼赚钱】《新手必做》★★★★★",
-      "title": "【小鱼赚钱】《新手必做》★★★★★",
-      "3": "小鱼助手送2元，单价1-2元，10元就能提现。",
-      "tip": "小鱼助手送2元，单价1-2元，10元就能提现。",
-      "4": "http://wx.xy599.com/share.php?id=19935620&act_source=invite&cooper_id=",
-      "href": "http://wx.xy599.com/share.php?id=19935620&act_source=invite&cooper_id=",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "10",
-      "id": "10",
-      "1": "./img/icon1/6.png",
-      "icon": "./img/icon1/6.png",
-      "2": "【巨宝朋】《新手必做》★★★★★",
-      "title": "【巨宝朋】《新手必做》★★★★★",
-      "3": "注册即送2元，完善个人资料送0.5元，共2.5元，10元就可提现。",
-      "tip": "注册即送2元，完善个人资料送0.5元，共2.5元，10元就可提现。",
-      "4": "http://im.jubaopeng8888.com/jbph5/api/sharePage/13661327",
-      "href": "http://im.jubaopeng8888.com/jbph5/api/sharePage/13661327",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "11",
-      "id": "11",
-      "1": "./img/icon1/7.png",
-      "icon": "./img/icon1/7.png",
-      "2": "【钱脉】玩一玩 应用就领现金奖励",
-      "title": "【钱脉】玩一玩 应用就领现金奖励",
-      "3": "★★★★★《新手必做》最新苹果iOS应用试玩平台，单价1-2元（大部分1.5元）， 新用户验证并激活成功就送1元，10元就可提现。",
-      "tip": "★★★★★《新手必做》最新苹果iOS应用试玩平台，单价1-2元（大部分1.5元）， 新用户验证并激活成功就送1元，10元就可提现。",
-      "4": "http://m.qianmaiap.com/?u=367504",
-      "href": "http://m.qianmaiap.com/?u=367504",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "12",
-      "id": "12",
-      "1": "./img/icon1/20.png",
-      "icon": "./img/icon1/20.png",
-      "2": "【天天赚钱】",
-      "title": "【天天赚钱】",
-      "3": "单任务1块，10元提现，任务多，不重复",
-      "tip": "单任务1块，10元提现，任务多，不重复",
-      "4": "http://www.51jpgy.com/web/share/userid/1556927.html",
-      "href": "http://www.51jpgy.com/web/share/userid/1556927.html",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "13",
-      "id": "13",
-      "1": "./img/icon1/27.jpg",
-      "icon": "./img/icon1/27.jpg",
-      "2": "【探米】",
-      "title": "【探米】",
-      "3": "新人送1元，每个任务单价1元起，10元提现支付宝或微信。",
-      "tip": "新人送1元，每个任务单价1元起，10元提现支付宝或微信。",
-      "4": "http://tanrice.com/i/?395823",
-      "href": "http://tanrice.com/i/?395823",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "14",
-      "id": "14",
-      "1": "./img/icon1/11.png",
-      "icon": "./img/icon1/11.png",
-      "2": "【鼠宝试玩】100%可以瓜分到现金",
-      "title": "【鼠宝试玩】100%可以瓜分到现金",
-      "3": "任务单价1-2元，10元就能提现。",
-      "tip": "任务单价1-2元，10元就能提现。",
-      "4": "http://www.mapzqq-com.com/info/share/901537",
-      "href": "http://www.mapzqq-com.com/info/share/901537",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "15",
-      "id": "15",
-      "1": "./img/icon1/26.png",
-      "icon": "./img/icon1/26.png",
-      "2": "秒赚钥匙《新手必做》★★★★★",
-      "title": "秒赚钥匙《新手必做》★★★★★",
-      "3": "加入立送3元，10元提现，部分手机需在WIFI网络下完成",
-      "tip": "加入立送3元，10元提现，部分手机需在WIFI网络下完成",
-      "4": "http://m.apptry100.cn/?u=37624062",
-      "href": "http://m.apptry100.cn/?u=37624062",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "16",
-      "id": "16",
-      "1": "./img/icon1/1.png",
-      "icon": "./img/icon1/1.png",
-      "2": "【小猪赚钱】",
-      "title": "【小猪赚钱】",
-      "3": "加入立刻送5元现金奖励。只要10元就能提现，试玩应用单价1元起，任务多多！",
-      "tip": "加入立刻送5元现金奖励。只要10元就能提现，试玩应用单价1元起，任务多多！",
-      "4": "http://integral.xckoo.com/invite?uid=368501",
-      "href": "http://integral.xckoo.com/invite?uid=368501",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "17",
-      "id": "17",
-      "1": "./img/icon1/25.jpeg",
-      "icon": "./img/icon1/25.jpeg",
-      "2": "葫芦娃《新手必做》★★★★★",
-      "title": "葫芦娃《新手必做》★★★★★",
-      "3": "加入立送3元，10元提现支付宝",
-      "tip": "加入立送3元，10元提现支付宝",
-      "4": "http://m.rhl9.cn?u=7624730",
-      "href": "http://m.rhl9.cn?u=7624730",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "18",
-      "id": "18",
-      "1": "./img/icon1/14.png",
-      "icon": "./img/icon1/14.png",
-      "2": "【熊猫试玩】",
-      "title": "【熊猫试玩】",
-      "3": "新用户加入下载熊猫大咖立送2元，单价1元起，10元就可提现。",
-      "tip": "新用户加入下载熊猫大咖立送2元，单价1元起，10元就可提现。",
-      "4": "http://m.jinrizuijia.net/invite/?inviter=rTJEEGCZ8adca07j43t5v7VLWOzsMI0ajB_AsZN2y-9juCMHkGun4GkMDpBMifh47r-5gAYlXRI1&from=link",
-      "href": "http://m.jinrizuijia.net/invite/?inviter=rTJEEGCZ8adca07j43t5v7VLWOzsMI0ajB_AsZN2y-9juCMHkGun4GkMDpBMifh47r-5gAYlXRI1&from=link",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "19",
-      "id": "19",
-      "1": "./img/icon1/15.png",
-      "icon": "./img/icon1/15.png",
-      "2": "【蚂蚁小咖】",
-      "title": "【蚂蚁小咖】",
-      "3": "加入送3元，满10元提现，单价1元起。",
-      "tip": "加入送3元，满10元提现，单价1元起。",
-      "4": "http://v2.mayixiaoka.com/rec/60906",
-      "href": "http://v2.mayixiaoka.com/rec/60906",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "20",
-      "id": "20",
-      "1": "./img/icon1/16.png",
-      "icon": "./img/icon1/16.png",
-      "2": "【火箭试玩】送现金红包",
-      "title": "【火箭试玩】送现金红包",
-      "3": "送现金红包",
-      "tip": "送现金红包",
-      "4": "http://huojianshiwan.com/#/link/UjNGNkpNMU5kdkJKenFXa0FiV1BvUT09",
-      "href": "http://huojianshiwan.com/#/link/UjNGNkpNMU5kdkJKenFXa0FiV1BvUT09",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "21",
-      "id": "21",
-      "1": "./img/icon1/17.png",
-      "icon": "./img/icon1/17.png",
-      "2": "【狐狸赚】新用户送1元，10元就能提现",
-      "title": "【狐狸赚】新用户送1元，10元就能提现",
-      "3": "新用户送1元，10元就能提现，利用闲暇时间通过狐狸赚试玩体验苹果手机应用即可轻松获得现金奖励。",
-      "tip": "新用户送1元，10元就能提现，利用闲暇时间通过狐狸赚试玩体验苹果手机应用即可轻松获得现金奖励。",
-      "4": "http://www.bazikeji.com/invite/667135",
-      "href": "http://www.bazikeji.com/invite/667135",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "22",
-      "id": "22",
-      "1": "./img/icon1/19.png",
-      "icon": "./img/icon1/19.png",
-      "2": "【懒猫】",
-      "title": "【懒猫】",
-      "3": "新手任务领最高10元微信红包，任务单价1-3元",
-      "tip": "新手任务领最高10元微信红包，任务单价1-3元",
-      "4": "http://m.cattryapp.com/u/3159461.html",
-      "href": "http://m.cattryapp.com/u/3159461.html",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "23",
-      "id": "23",
-      "1": "./img/icon1/18.jpg",
-      "icon": "./img/icon1/18.jpg",
-      "2": "【蝉试客】",
-      "title": "【蝉试客】",
-      "3": "新手任务领最高10元微信红包，任务单价1-3元",
-      "tip": "新手任务领最高10元微信红包，任务单价1-3元",
-      "4": "http://csk1.xiaochanzhuanqian.cn/?uid=1023269",
-      "href": "http://csk1.xiaochanzhuanqian.cn/?uid=1023269",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "24",
-      "id": "24",
-      "1": "./img/icon1/20.png",
-      "icon": "./img/icon1/20.png",
-      "2": "【天天赚钱】",
-      "title": "【天天赚钱】",
-      "3": "单任务1块，10元提现，任务多，不重复",
-      "tip": "单任务1块，10元提现，任务多，不重复",
-      "4": "http://www.51jpgy.com/web/share/userid/1625936.html",
-      "href": "http://www.51jpgy.com/web/share/userid/1625936.html",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "25",
-      "id": "25",
-      "1": "./img/icon1/21.png",
-      "icon": "./img/icon1/21.png",
-      "2": "【麻袋爱赚】",
-      "title": "【麻袋爱赚】",
-      "3": "老平台，值得推荐",
-      "tip": "老平台，值得推荐",
-      "4": "https://m.damadai.com/landing/?mstid=67184",
-      "href": "https://m.damadai.com/landing/?mstid=67184",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "26",
-      "id": "26",
-      "1": "./img/icon1/22.png",
-      "icon": "./img/icon1/22.png",
-      "2": "【一号红包】",
-      "title": "【一号红包】",
-      "3": "加入送3元，满10元提现，单价1元起。",
-      "tip": "加入送3元，满10元提现，单价1元起。",
-      "4": "http://scxmcy.com.cn/?u=532951077&balance=1&name=&from=singlemessage&t=1532964376",
-      "href": "http://scxmcy.com.cn/?u=532951077&balance=1&name=&from=singlemessage&t=1532964376",
-      "5": null,
-      "submission_date": null
-    },
-    {
-      "0": "27",
-      "id": "27",
-      "1": "./img/icon1/23.png",
-      "icon": "./img/icon1/23.png",
-      "2": "【米趣】",
-      "title": "【米趣】",
-      "3": "最新苹果iOS应用试玩平台，单价1-2元（大部分1.5元）， 新用户验证并激活成功就送1元，10元就可提现。",
-      "tip": "最新苹果iOS应用试玩平台，单价1-2元（大部分1.5元）， 新用户验证并激活成功就送1元，10元就可提现。",
-      "4": "http://www.miquapp.com/Share?u=czoxNjoiOTkzNTgsMTUzMjk2NDk1OSI7&from=singlemessage",
-      "href": "http://www.miquapp.com/Share?u=czoxNjoiOTkzNTgsMTUzMjk2NDk1OSI7&from=singlemessage",
-      "5": null,
-      "submission_date": null
-    }
-  ]
-   
-    
-//     var str = '';
-//     for (i in arr) {
-//         str += '<li><div class="icon"><img width="50px" src="' + arr[i]["icon"] + '"></div>\n' +
-//                 '                    <div class="article">\n' +
-//                 '                        <h2>' + arr[i]["title"] + '</h2>\n' +
-//                 '                        <p>\n' +
-//                 '                            ' + arr[i]["tip"] + '\n' +
-//                 '                        </p>\n' +
-//                 '                    </div>\n' +
-//                 '                    <a class="btn" href="javascript:;" ontouchstart=' + 'window.location.href="' + arr[i]["href"] + '"' + '>\n' +
-//                 '                        进入\n' +
-//                 '                    </a></li>'
-//     }
-//     $('.content ul').html(str);
-        function getList(){
+    <script type="text/javascript" src="//libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+    <script type="text/javascript">
+        var arr = [{
+            "id": 36,
+            "ord": "100",
+            "icon": "./img/icon1/13.png",
+            "title": "【试客小兵】《新手必做》★★★★★",
+            "tip": "新试客小兵单价2元起，高的可达5元以上，8元即可提现，秒到帐。",
+            "href": "https://shike.com/i/LVlvrgc",
+            "submission_date": null
+        }, {
+            "id": 37,
+            "ord": "99",
+            "icon": "./img/icon1/3.png",
+            "title": "【天天钱庄】《新手必做》★★★★★",
+            "tip": "天天钱庄苹果iOS应用试玩平台新用户送1元，应用单价1元起，5元就能提现。",
+            "href": "https://api.ancloud.cn/s/invite?fromuid=2259725",
+            "submission_date": null
+        }, {
+            "id": 39,
+            "ord": "98",
+            "icon": "./img/icon1/10.png",
+            "title": "【IMONEY】《新手必做》★★★★★",
+            "tip": "加入立刻送5元现金奖励。只要10元就能提现，试玩应用单价1元起，任务多多",
+            "href": "https://www.eimoney.com/diamonds/mobile/share/link?promote_code=8576067",
+            "submission_date": null
+        }, {
+            "id": 41,
+            "ord": "97",
+            "icon": "./img/icon1/6.png",
+            "title": "【巨宝朋】《新手必做》★★★★★",
+            "tip": "注册即送2元，完善个人资料送0.5元，共2.5元，10元就可提现。",
+            "href": "http://im.jubaopeng8888.com/jbph5/api/sharePage/13661327",
+            "submission_date": null
+        }, {
+            "id": 35,
+            "ord": "96",
+            "icon": "./img/icon1/12.png",
+            "title": "【钱咖】《新手必做》★★★★★",
+            "tip": "用户每成功体验一个软件只需要3-5分钟左右，单价奖励1.5~3.5元不等。",
+            "href": "https://lovefive.cn/?u=46568308&referer_code=5568105ad8498&from=singlemessage",
+            "submission_date": null
+        }, {
+            "id": 38,
+            "ord": "95",
+            "icon": "./img/icon1/24.jpeg",
+            "title": "【PP红包】《新手必做》★★★★★",
+            "tip": "试玩应用单价1元起，任务多多",
+            "href": "http://pp.ppsuoping.com/?random=1122&r=822481059",
+            "submission_date": null
+        }, {
+            "id": 42,
+            "ord": "94",
+            "icon": "./img/icon1/7.png",
+            "title": "【钱脉】《新手必做》★★★★★",
+            "tip": "单价1-2元（大部分1.5元）， 新用户验证并激活成功就送1元，10元就可提现。",
+            "href": "http://m.qianmaiap.com/?u=367504",
+            "submission_date": null
+        }, {
+            "id": 40,
+            "ord": "93",
+            "icon": "./img/icon1/4.png",
+            "title": "【小鱼赚钱】《新手必做》★★★★★",
+            "tip": "小鱼助手送2元，单价1-2元，10元就能提现。",
+            "href": "http://wx.xy599.com/share.php?id=19935620&act_source=invite&cooper_id=",
+            "submission_date": null
+        }, {
+            "id": 56,
+            "ord": "92",
+            "icon": "./img/icon1/21.png",
+            "title": "【赚钱吧】《新手必做》★★★★★",
+            "tip": "老平台，新用户注册就送3元，10元就可提现。",
+            "href": "http://www.xkrlb.cn/0003085fe41cc10105547dd95094390fa53e.html?invite_code=jRkK4",
+            "submission_date": null
+        }, {
+            "id": 54,
+            "ord": "91",
+            "icon": "./img/icon1/18.jpg",
+            "title": "【蝉试客】《新手必做》★★★★★",
+            "tip": "新手任务领最高10元微信红包，任务单价1-3元",
+            "href": "http://csk1.xiaochanzhuanqian.cn/?uid=1023269",
+            "submission_date": null
+        }, {
+            "id": 43,
+            "ord": "90",
+            "icon": "./img/icon1/20.png",
+            "title": "【天天赚钱】《新手必做》★★★★★",
+            "tip": "单任务1块，10元提现，任务多，不重复",
+            "href": "http://www.51jpgy.com/web/share/userid/1556927.html",
+            "submission_date": null
+        }, {
+            "id": 46,
+            "ord": "89",
+            "icon": "./img/icon1/26.png",
+            "title": "秒赚钥匙《新手必做》★★★★★",
+            "tip": "加入立送3元，10元提现，部分手机需在WIFI网络下完成",
+            "href": "http://m.apptry100.cn/?u=37624062",
+            "submission_date": null
+        }, {
+            "id": 52,
+            "ord": "88",
+            "icon": "./img/icon1/17.png",
+            "title": "【钱大师】《新手必做》★★★★★",
+            "tip": "新用户送3元，10元就能提现，利用闲暇时间通过钱大师试玩体验苹果手机应用即可轻松获得现金奖励。",
+            "href": "http://m.moneyds.com/user/inviteu/80907760.html",
+            "submission_date": null
+        }, {
+            "id": 55,
+            "ord": "87",
+            "icon": "./img/icon1/20.png",
+            "title": "【今日赚】《新手必做》★★★★★",
+            "tip": "单任务1块，10元提现，任务多，不重复",
+            "href": "https://www.sigjwok.com/new-activity/index.html?uid=088660_source=newShare",
+            "submission_date": null
+        }, {
+            "id": 85,
+            "ord": "86",
+            "icon": "./img/icon1/16.png",
+            "title": "【掉钱眼儿】《新手必做》★★★★★",
+            "tip": "掉钱眼儿是移动APP的抢先应用试玩体验平台【首次成功安装掉钱眼儿并进入送2元现金红包",
+            "href": "http://invite.diaoqianyaner.com/invition/?num=7630&userId=6821027&e=907",
+            "submission_date": null
+        }, {
+            "id": 51,
+            "ord": "85",
+            "icon": "./img/icon1/16.png",
+            "title": "【火箭试玩】《新手必做》★★★★★",
+            "tip": "首次成功安装火箭试玩并进入送3元现金红包，需支付宝验证，提现支付宝",
+            "href": "http://huojianshiwan.com/#/link/UjNGNkpNMU5kdkJKenFXa0FiV1BvUT09",
+            "submission_date": null
+        }, {
+            "id": 44,
+            "ord": "84",
+            "icon": "./img/icon1/27.jpg",
+            "title": "【探米】《新手必做》★★★★★",
+            "tip": "新人送1元，每个任务单价1元起，10元提现支付宝或微信。",
+            "href": "http://tanrice.com/i/?395823",
+            "submission_date": null
+        }, {
+            "id": 47,
+            "ord": "83",
+            "icon": "./img/icon1/1.png",
+            "title": "【海豚试玩】《新手必做》★★★★★",
+            "tip": "加入立刻送5元现金奖励。只要10元就能提现，试玩应用单价1元起，任务多多！",
+            "href": "https://htsw.youdongren.com/invite/?id=1008515",
+            "submission_date": null
+        }, {
+            "id": 53,
+            "ord": "82",
+            "icon": "./img/icon1/19.png",
+            "title": "【懒猫】",
+            "tip": "新手任务领最高10元微信红包，任务单价1-3元",
+            "href": "http://m.cattryapp.com/u/3159461.html",
+            "submission_date": null
+        }, {
+            "id": 48,
+            "ord": "81",
+            "icon": "./img/icon1/25.jpeg",
+            "title": "葫芦娃",
+            "tip": "加入立送3元，10元提现支付宝",
+            "href": "http://m.rhl9.cn?u=7624730",
+            "submission_date": null
+        }, {
+            "id": 50,
+            "ord": "80",
+            "icon": "./img/icon1/15.png",
+            "title": "【蚂蚁小咖】",
+            "tip": "加入送3元，满10元提现，单价1元起。",
+            "href": "http://v2.mayixiaoka.com/rec/60906",
+            "submission_date": null
+        }, {
+            "id": 49,
+            "ord": "79",
+            "icon": "./img/icon1/14.png",
+            "title": "【熊猫试玩】",
+            "tip": "新用户加入下载熊猫大咖立送2元，单价1元起，10元就可提现。",
+            "href": "http://m.jinrizuijia.net/invite/?inviter=rTJEEGCZ8adca07j43t5v7VLWOzsMI0ajB_AsZN2y-9juCMHkGun4GkMDpBMifh47r-5gAYlXRI1&from=link",
+            "submission_date": null
+        }, {
+            "id": 57,
+            "ord": "76",
+            "icon": "./img/icon1/22.png",
+            "title": "【一号红包】",
+            "tip": "加入送3元，满10元提现，单价1元起。",
+            "href": "http://scxmcy.com.cn/?u=532951077&balance=1&name=&from=singlemessage&t=1532964376",
+            "submission_date": null
+        }, {
+            "id": 58,
+            "ord": "74",
+            "icon": "./img/icon1/23.png",
+            "title": "【米趣】",
+            "tip": "最新苹果iOS应用试玩平台，单价1-2元（大部分1.5元）， 新用户验证并激活成功就送1元，10元就可提现。",
+            "href": "http://www.miquapp.com/Share?u=czoxNjoiOTkzNTgsMTUzMjk2NDk1OSI7&from=singlemessage",
+            "submission_date": null
+        }, {
+            "id": 45,
+            "ord": "70",
+            "icon": "./img/icon1/11.png",
+            "title": "【鼠宝试玩】100%可以瓜分到现金",
+            "tip": "任务单价1-2元，10元就能提现。",
+            "href": "http://www.mapzqq-com.com/info/share/901537",
+            "submission_date": null
+        }]
+
+        function getList() {
             $.ajax({
-                url:'https://www.apple2.top/getInfo',
-                success:function(e){
-                   setList(e)
+                url: 'https://www.apple2.top/getInfo',
+                success: function(e) {
+                    setList(e)
                 },
-                error:function(){
-                   setList(arr)
+                error: function() {
+                    setList(arr)
                 }
             });
         }
         getList();
-        function setList(arr){
+
+        function setList(arr) {
             var str = '';
             for (i in arr) {
-                str += '<li><div class="icon"><img width="50px" src="' + arr[i]["icon"] + '"></div>\n' +
-                        '                    <div class="article">\n' +
-                        '                        <h2>' + arr[i]["title"] + '</h2>\n' +
-                        '                        <p>\n' +
-                        '                            ' + arr[i]["tip"] + '\n' +
-                        '                        </p>\n' +
-                        '                    </div>\n' +
-                        '                    <a class="btn" href="javascript:;" ontouchstart=' + 'window.location.href="' + arr[i]["href"] + '"' + '>\n' +
-                        '                        进入\n' +
-                        '                    </a></li>'
+                str += '<li><div class="icon" style="background-position-x:-' + arr[i]["icon"] * 60 + 'px"></div>\n' +
+                    '                    <div class="article">\n' +
+                    '                        <h2>' + arr[i]["title"] + '</h2>\n' +
+                    '                        <p>\n' +
+                    '                            ' + arr[i]["tip"] + '\n' +
+                    '                        </p>\n' +
+                    '                    </div>\n' +
+                    '                    <a class="btn" href="javascript:;" ontouchstart=' + 'window.location.href="' + arr[i]["href"] + '"' + '>\n' +
+                    '                        进入\n' +
+                    '                    </a></li>'
             }
             $('.content ul').html(str);
         }
-   
-</script>
+    </script>
 </body>
+
 </html>
