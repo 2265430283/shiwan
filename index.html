@@ -330,10 +330,11 @@
                 "submission_date": null
             }
         ]
+        var hash=window.location.hash.slice(1);
 
         function getList() {
             $.ajax({
-                url: 'https://www.apple2.top/getInfo',
+                url: 'https://www.apple2.top/api/getInfo?user='+hash+'&&time=' + new Date().getTime(),
                 success: function(e) {
                     setList(e)
                 },
