@@ -331,6 +331,10 @@
             }
         ]
         var hash=window.location.hash.slice(1);
+        if(hash.indexOf("?")>-1){
+            hash=hash.split('?')[0];
+        }
+       
 
         function getList() {
             $.ajax({
